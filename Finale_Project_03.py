@@ -1,11 +1,13 @@
 def my_score(*args):
+    global game_running
+    game_running = False
     if cmds.window("timer", exists=True):
         cmds.deleteUI("timer")
 
     if cmds.window("score", exists=True):
         cmds.deleteUI("score")
 
-    cmds.window("score", title="GAME OVER", widthHeight=(300, 350), sizeable=False)
+    cmds.window("score", title="GAME OVER", widthHeight=(300, 350))
     
     cmds.columnLayout(adjustableColumn=True, columnAlign="center")
     cmds.text(label="GAME OVER")
