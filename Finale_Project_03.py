@@ -7,10 +7,10 @@ def my_score(*args):
     if cmds.window("score", exists=True):
         cmds.deleteUI("score")
 
-    cmds.window("score", title="GAME OVER", widthHeight=(300, 350))
+    cmds.window("score", title="GAME OVER", widthHeight=(300, 350), backgroundColor=(0.5, 0, 0))
     
     cmds.columnLayout(adjustableColumn=True, columnAlign="center")
-    cmds.text(label="GAME OVER")
+    cmds.text(label="GAME OVER", height=(100), backgroundColor=(0.3, 0.0, 0.0))
     
     cmds.separator(height=10, style='none')  
     
@@ -22,14 +22,14 @@ def my_score(*args):
     cmds.separator(height=10, style='none')  
 
     cmds.columnLayout(adjustableColumn=True, columnAlign="center")
-    cmds.button(label="😐 Ok", width=100, command=close_window)
+    cmds.button(label="😐 Ok", width=100, backgroundColor=(0, 0, 0), command=close_window)
 
     cmds.showWindow("score")
 
 
 def close_window(*args):
     my_window()
-    s = 0  # Score
+    s = 0  
     t = 0
     if cmds.window("score", exists=True):
         cmds.deleteUI("score")

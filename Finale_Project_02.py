@@ -38,7 +38,7 @@ def my_timer():
     c1 = cmds.button(label="", width=50, height=50,
                      backgroundColor=(0, 1, 0), command=count_scores)
 
-    stop = cmds.button(label="😡 Stop", width=100, height=40, command=lambda x: my_score())
+    stop = cmds.button(label="😡 Stop", width=100, height=40, backgroundColor=(0, 0, 0), command=lambda x: my_score())
 
     cmds.formLayout(form, edit=True,
         attachForm=[(info, 'top', 10),(info, 'left', 100),(info, 'right', 100),
